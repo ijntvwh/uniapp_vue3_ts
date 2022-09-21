@@ -1,0 +1,12 @@
+/dist
+node_modules
+
+/.vscode
+
+/types/wx
+/types/wx.d.ts
+
+/src/static
+/src/lib
+
+

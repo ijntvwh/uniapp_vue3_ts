@@ -1,0 +1,77 @@
+{
+  "files.insertFinalNewline": true,
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+  "editor.wordWrapColumn": 120,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "editor.formatOnSaveMode": "modificationsIfAvailable",
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "formatFiles.excludedFolders": ["node_modules", ".vscode", ".git", "dist", "libs"],
+  "files.exclude": {
+    "**/.idea": true,
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
+  },
+  "files.eol": "\n",
+  "files.autoSave": "afterDelay",
+  "eslint.run": "onSave",
+  "eslint.packageManager": "yarn",
+  "eslint.format.enable": true,
+  "eslint.lintTask.enable": true,
+  "path-intellisense.extensionOnImport": true,
+  "path-intellisense.mappings": {
+    "@": "${workspaceRoot}/src"
+  },
+  "search.exclude": {
+    "**/dist": true
+  },
+  "cSpell.words": [
+    "extralight",
+    "gltf",
+    "miniprogram",
+    "nprogress",
+    "pinia",
+    "qrcode",
+    "threejs",
+    "vite",
+    "wechat",
+    "windi",
+    "windicss"
+  ],
+  "todo-tree.general.tags": ["BUG", "HACK", "FIXME", "TODO", "XXX", "[ ]", "[x]", "todo"],
+  "todo-tree.filtering.excludeGlobs": ["**/node_modules/**", "/workers/**"],
+  "todo-tree.highlights.customHighlight": {
+    "TODO": {
+      "foreground": "#ffec41",
+      "type": "text-and-comment"
+    }
+  },
+  "files.associations": {
+    "*.cjson": "jsonc",
+    "*.wxss": "css",
+    "*.wxs": "javascript",
+    ".env.ar": "env",
+    ".env.good": "env"
+  }
+}
