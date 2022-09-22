@@ -16,6 +16,7 @@ export const navTo = (
   if (!NavFuncMap) return Promise.reject(new Error('nav not init'))
   const func = NavFuncMap[type]
   if (typeof to === 'string') {
+    // 自动添加 /pages/ 的前缀
     const url = /^\/?pages\//.test(to) ? to : `/pages/${to}`
     return func({ url }) as unknown as Promise<UniNamespace.NavigateToSuccessOptions | void>
   }
