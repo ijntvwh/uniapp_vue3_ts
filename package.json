@@ -26,6 +26,7 @@
     "pinia": "^2.0.22",
     "pinia-plugin-persist-uni": "^1.1.5",
     "sass": "^1.54.9",
+    "threejs-miniprogram": "^0.0.8",
     "uni-ajax": "^2.4.5",
     "uni-crazy-router": "^1.1.1",
     "vue": "^3.2.40"
@@ -42,6 +43,7 @@
     "@types/lodash-es": "^4.17.6",
     "@types/prettier": "^2.7.0",
     "@types/sass": "^1.43.1",
+    "@types/three": "^0.125.3",
     "@typescript-eslint/eslint-plugin": "^5.38.0",
     "@typescript-eslint/parser": "^5.38.0",
     "eslint": "^8.23.1",

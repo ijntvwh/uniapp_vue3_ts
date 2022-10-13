@@ -8,6 +8,9 @@
     },
     {
       "path": "pages/user"
+    },
+    {
+      "path": "pages/three"
     }
   ],
   "globalStyle": {
