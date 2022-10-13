@@ -2,10 +2,11 @@
   "name": "uni-preset-vue",
   "version": "0.0.0",
   "scripts": {
-    "dev:app": "uni -p app",
+    "dev:h5": "uni",
     "dev": "uni -p mp-weixin",
     "build": "uni build -p mp-weixin",
-    "prepare": "types-sync && husky install"
+    "prepare": "types-sync && husky install",
+    "preinstall": "npx only-allow pnpm"
   },
   "husky": {
     "hooks": {
@@ -16,24 +17,25 @@
     "*.{ts,js,vue,json}": "eslint"
   },
   "dependencies": {
-    "@dcloudio/uni-app": "3.0.0-alpha-3060320220917001",
-    "@dcloudio/uni-app-plus": "3.0.0-alpha-3060320220917001",
-    "@dcloudio/uni-components": "3.0.0-alpha-3060320220917001",
-    "@dcloudio/uni-mp-weixin": "3.0.0-alpha-3060320220917001",
+    "@dcloudio/uni-app": "3.0.0-alpha-3060420220922006",
+    "@dcloudio/uni-app-plus": "3.0.0-alpha-3060420220922006",
+    "@dcloudio/uni-components": "3.0.0-alpha-3060420220922006",
+    "@dcloudio/uni-h5": "3.0.0-alpha-3060420220922006",
+    "@dcloudio/uni-mp-weixin": "3.0.0-alpha-3060420220922006",
     "lodash-es": "^4.17.21",
     "pinia": "^2.0.22",
     "pinia-plugin-persist-uni": "^1.1.5",
     "sass": "^1.54.9",
     "uni-ajax": "^2.4.5",
     "uni-crazy-router": "^1.1.1",
-    "vue": "^3.2.39"
+    "vue": "^3.2.40"
   },
   "devDependencies": {
     "@dcloudio/types": "^3.0.14",
-    "@dcloudio/uni-automator": "3.0.0-alpha-3060320220917001",
-    "@dcloudio/uni-cli-shared": "3.0.0-alpha-3060320220917001",
-    "@dcloudio/uni-stacktracey": "3.0.0-alpha-3060320220917001",
-    "@dcloudio/vite-plugin-uni": "3.0.0-alpha-3060320220917001",
+    "@dcloudio/uni-automator": "3.0.0-alpha-3060420220922006",
+    "@dcloudio/uni-cli-shared": "3.0.0-alpha-3060420220922006",
+    "@dcloudio/uni-stacktracey": "3.0.0-alpha-3060420220922005",
+    "@dcloudio/vite-plugin-uni": "3.0.0-alpha-3060420220922006",
     "@types/eslint": "^8.4.6",
     "@types/eslint-config-prettier": "^6.11.0",
     "@types/eslint-plugin-prettier": "^3.1.0",
@@ -52,8 +54,12 @@
     "types-sync": "^3.2.0",
     "typescript": "^4.8.3",
     "unplugin-auto-import": "^0.11.2",
-    "vite": "^2.9.14",
+    "vite": "^3.1.7",
     "vite-plugin-windicss": "^1.8.8",
     "windicss": "^3.5.6"
+  },
+  "engines": {
+    "node": ">=14",
+    "pnpm": ">=6"
   }
 }

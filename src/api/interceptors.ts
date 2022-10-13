@@ -53,7 +53,7 @@ export const toastError = (err: Error | AjaxResponse) => {
   return Promise.reject(err)
 }
 
-export const cleanToken = (err: Error | AjaxResponse) => {
+export const clearToken = (err: Error | AjaxResponse) => {
   if (err instanceof Error) return Promise.reject(err)
   err.data?.code?.startsWith('003') && appStore.updateToken('')
   return Promise.reject(err)

@@ -8,10 +8,12 @@
   "mp-weixin": {
     "appid": "",
     "setting": {
+      "ignoreDevUnusedFiles": false,
+      "ignoreUploadUnusedFiles": false,
       "compileHotReLoad": false,
       "es6": true,
       "enhance": true,
-      "urlCheck": true
+      "urlCheck": false
     },
     "usingComponents": true
   },

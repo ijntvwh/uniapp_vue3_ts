@@ -8,3 +8,4 @@ dist
 .idea
 .DS_Store
 /types/autoImport.d.ts
+pnpm-lock.yaml

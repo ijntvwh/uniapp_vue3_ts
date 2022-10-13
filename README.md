@@ -3,6 +3,7 @@
 
 | 类别 | 库 |
 | --- | --- |
+|包管理器|pnpm|
 |网络请求|uni-ajax|
 |路由拦截|uni-crazy-router|
 |css样式|sass, windicss|
