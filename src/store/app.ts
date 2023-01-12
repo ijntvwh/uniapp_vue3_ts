@@ -1,11 +1,11 @@
-import { defineStore } from 'pinia'
 import { uniStorage } from '@/store'
+import { defineStore } from 'pinia'
 
 export const useAppStore = defineStore('app', {
   state: () => ({ accessToken: '' }),
   // getters: {},
   actions: {
-    updateToken(s: string) {
+    updateToken(s = '') {
       this.accessToken = s
     },
   },

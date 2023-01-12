@@ -1,49 +1,42 @@
+import pagesJson from '@/pages.json'
 import uniCrazyRouter from 'uni-crazy-router'
 import { loginCheck } from './interceptors'
 
-type NavFuncMapType = {
-  to: UniPromisify<UniNamespace.NavigateToOptions>
-  redirect: UniPromisify<UniNamespace.RedirectToOptions>
-  launch: UniPromisify<UniNamespace.ReLaunchOptions>
-  tab: UniPromisify<UniNamespace.SwitchTabOptions>
-}
-let NavFuncMap: NavFuncMapType
-export type NavKey = keyof NavFuncMapType
-export const navTo = (
-  to: string | UniNamespace.RedirectToOptions | UniNamespace.NavigateToOptions,
-  type: NavKey = 'to'
-): Promise<UniNamespace.NavigateToSuccessOptions | void> => {
-  if (!NavFuncMap) return Promise.reject(new Error('nav not init'))
+type NavToOptions = UniApp.NavigateToOptions | UniNamespace.NavigateToOptions
+type NavRedirectOptions = UniApp.RedirectToOptions | UniNamespace.RedirectToOptions
+type NavLaunchOptions = UniApp.ReLaunchOptions | UniNamespace.ReLaunchOptions
+type NavTabOptions = UniApp.SwitchTabOptions | UniNamespace.SwitchTabOptions
+
+type CommonOptions = NavToOptions | NavRedirectOptions | NavLaunchOptions | NavTabOptions
+
+export type NavKey = 'to' | 'redirect' | 'launch' | 'tab'
+export const navTo = (to: string | CommonOptions, type: NavKey = 'to'): Promise<void> => {
+  const NavFuncMap = { to: uni.navigateTo, redirect: uni.redirectTo, launch: uni.reLaunch, tab: uni.switchTab }
   const func = NavFuncMap[type]
   if (typeof to === 'string') {
     // 自动添加 /pages/ 的前缀
     const url = /^\/?pages\//.test(to) ? to : `/pages/${to}`
-    return func({ url }) as unknown as Promise<UniNamespace.NavigateToSuccessOptions | void>
+    // @ts-ignore
+    return func({ url })
   }
+  // @ts-ignore
   return func(to)
 }
 
-// uniCrazyRouter.afterEach((to, from) => {
-//   console.log('router afterEach', to, from)
-// })
-
-// uniCrazyRouter.onError((to, from) => {
-//   console.log('router onError', to, from)
-// })
+export const navBack = () => {
+  const pageStack = getCurrentPages()
+  const curPage = pageStack.at(-1)
+  const homePath = pagesJson.pages[0].path
+  if (pageStack.length === 1) {
+    if (curPage?.route !== homePath) navTo(`/${homePath}`, 'launch')
+    return
+  }
+  uni.navigateBack()
+}
 
 const installFunc = uniCrazyRouter.install
 uniCrazyRouter.install = (...args: any[]) => {
   installFunc(...args)
   loginCheck(uniCrazyRouter)
-  initNavFunc()
 }
 export const Router = uniCrazyRouter
-
-function initNavFunc() {
-  NavFuncMap = {
-    to: uni.navigateTo,
-    redirect: uni.redirectTo,
-    launch: uni.reLaunch,
-    tab: uni.switchTab,
-  } as NavFuncMapType
-}

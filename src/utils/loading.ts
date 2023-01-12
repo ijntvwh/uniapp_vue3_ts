@@ -1,12 +1,15 @@
 import { Ref } from 'vue'
 
 export const watchShow = (ing: Ref<boolean>, title = '加载中') =>
-  watchEffect(() => (ing.value ? uni.showLoading({ title }) : uni.hideLoading()))
+  watchEffect(() => {
+    ing.value ? uni.showLoading({ title }) : uni.hideLoading()
+  })
 
-export const wrapPromise = <T>(p: Promise<T>, ingRef: Ref<boolean>) => {
+export const wrapPromise = <T>(p: () => Promise<T>, ingRef: Ref<boolean>) => {
   return ingCheck(ingRef)
     .then(() => (ingRef.value = true))
-    .then(() => p.finally(() => (ingRef.value = false)))
+    .then(p)
+    .finally(() => (ingRef.value = false))
 }
 
 export const ingCheck = (ingRef: Ref<boolean>) => {

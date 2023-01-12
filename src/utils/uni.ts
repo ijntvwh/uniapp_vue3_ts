@@ -28,14 +28,20 @@ export const queryCanvas = (selector: string): Promise<WechatMiniprogram.Canvas>
 
 type PermScope = keyof UniNamespace.AuthSetting extends `scope.${infer T}` ? `${T}` : never
 
-export function requestPerm(perm: PermScope, desc: string) {
+export function requestPerm(perm: PermScope, content: string) {
   const scope: keyof UniNamespace.AuthSetting = `scope.${perm}`
   return uniGetSetting({})
     .then(res => !res.authSetting[scope] && uniAuthorize({ scope }))
     .catch(err => {
-      uniShowModal({ title: '', content: `您已拒绝授权${desc}，请打开${desc}权限` }).then(
-        res => res.confirm && uni.openSetting({})
-      )
+      uniShowModal({ title: '', content }).then(res => res.confirm && uni.openSetting({}))
       return Promise.reject(err)
     })
 }
+
+export const wxLoginCode = () =>
+  new Promise<string>((resolve, reject) =>
+    wx.login({
+      success: (res: WechatMiniprogram.LoginSuccessCallbackResult) => resolve(res.code),
+      fail: reject,
+    })
+  )

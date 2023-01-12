@@ -1,13 +1,13 @@
 import { defineConfig } from 'windicss/helpers'
-import LineClamp from 'windicss/plugin/line-clamp'
-import Forms from 'windicss/plugin/forms'
+// import Forms from 'windicss/plugin/forms'
+// import LineClamp from 'windicss/plugin/line-clamp'
 
 export default defineConfig({
-  plugins: [Forms, LineClamp],
+  // plugins: [Forms, LineClamp],
   separator: '_',
   extract: {
     include: ['src/**/*.{vue,html,ts}'],
-    exclude: ['node_modules', '.git', 'src/lib', 'types'],
+    exclude: ['node_modules', '.git', 'src/lib', 'src/wxcomponents', 'src/uni_modules', 'types'],
   },
   shortcuts: {
     screen: 'w-screen h-screen',

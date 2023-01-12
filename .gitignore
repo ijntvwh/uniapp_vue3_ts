@@ -2,6 +2,7 @@ node_modules
 dist
 *.local
 
+.lh
 .vscode/*
 !.vscode/extensions.json
 !.vscode/settings.json
@@ -9,3 +10,5 @@ dist
 .DS_Store
 /types/autoImport.d.ts
 pnpm-lock.yaml
+/stats.html
+/ci/*.key

@@ -16,7 +16,7 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "lib": ["esnext", "dom"],
-    "types": ["@dcloudio/types", "pinia-plugin-persist-uni"]
+    "types": ["@dcloudio/types", "pinia-plugin-persist-uni", "miniprogram-api-typings"]
   },
   "include": ["types/*.d.ts", "src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
   "references": [{ "path": "./tsconfig.node.json" }]

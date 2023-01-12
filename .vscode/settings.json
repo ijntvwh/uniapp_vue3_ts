@@ -1,13 +1,14 @@
 {
   "typescript.format.semicolons": "remove",
-  "autoimport.useSemiColon": false,
   "editor.tabSize": 2,
   "editor.formatOnSave": true,
   "editor.wordWrapColumn": 120,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true,
     "source.organizeImports": true
   },
+  "stylelint.validate": ["css", "scss", "vue"],
   "editor.formatOnSaveMode": "modificationsIfAvailable",
   "[vue]": {
     "editor.formatOnSave": false,
@@ -29,16 +30,15 @@
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "formatFiles.excludedFolders": ["node_modules", ".vscode", ".git", "dist", "libs"],
   "files.exclude": {
-    "**/.idea": true,
     "**/.classpath": true,
+    "**/.factorypath": true,
+    "**/.idea": true,
     "**/.project": true,
-    "**/.settings": true,
-    "**/.factorypath": true
+    "**/.settings": true
   },
   "files.eol": "\n",
-  "files.autoSave": "afterDelay",
+  "files.autoSave": "onFocusChange",
   "files.insertFinalNewline": true,
   "eslint.enable": true,
   "eslint.run": "onSave",
@@ -46,22 +46,19 @@
   "eslint.lintTask.enable": true,
   "eslint.packageManager": "pnpm",
   "npm.packageManager": "pnpm",
-  "path-intellisense.extensionOnImport": true,
-  "path-intellisense.mappings": {
-    "@": "${workspaceRoot}/src"
-  },
   "search.exclude": {
-    "**/dist": true
+    "**/dist": true,
+    "**/node_modules": true
   },
   "cSpell.words": [
     "extralight",
-    "gltf",
     "miniprogram",
     "nprogress",
     "pinia",
     "qrcode",
-    "threejs",
+    "vant",
     "vite",
+    "weapp",
     "wechat",
     "windi",
     "windicss"
@@ -75,15 +72,17 @@
     }
   },
   "files.watcherExclude": {
-    "dist/**": true,
-    "src/lib/**": true,
-    "src/static/**": true
+    "/dist/": true,
+    "/src/lib/": true,
+    "/src/static/": true,
+    "/src/uni_modules": true,
+    "/src/wxcomponents/": true
   },
   "files.associations": {
     "*.cjson": "jsonc",
     "*.wxss": "css",
     "*.wxs": "javascript",
-    ".env.ar": "env",
-    ".env.good": "env"
+    ".env.*": "dotenv"
   }
+  // "scss.lint.unknownAtRules": "ignore"
 }
