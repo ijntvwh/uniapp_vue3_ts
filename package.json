@@ -11,11 +11,6 @@
     "upload": "npx tsx --tsconfig tsconfig.node.json ci/upload.ts",
     "preview2": "npx tsx --tsconfig tsconfig.node.json ci/preview.ts"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
     "*.{ts,js,vue,json}": "eslint"
   },
@@ -51,7 +46,6 @@
     "@types/eslint-plugin-prettier": "^3.1.0",
     "@types/fs-extra": "^9.0.13",
     "@types/lodash": "^4.14.191",
-    "@types/node": "^16",
     "@types/path-browserify": "^1.0.0",
     "@types/prettier": "^2.7.0",
     "@types/rollup-plugin-visualizer": "^4.2.1",
