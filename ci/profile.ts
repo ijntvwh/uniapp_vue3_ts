@@ -6,11 +6,11 @@ function readEnv(files: string[]): string {
   let appid: string
   for (let index = 0; index < files.length; index++) {
     const element = files[index]
-    appid = dotenv.parse(fs.readFileSync(element))['VITE_MP_APPID']
-    if (appid) return
+    const envObj = dotenv.parse(fs.readFileSync(element))
+    appid = envObj.VITE_MP_APPID
+    if (appid) return appid
   }
-  if (!appid) throw new Error('appid not found')
-  return appid
+  throw new Error('appid not found')
 }
 
 export function readProfile() {
@@ -24,8 +24,8 @@ export function readProfile() {
 
     // appid
     const appid = readEnv(envFiles)
-
     const projectConfigJson = fs.readJsonSync(projectPath + 'project.config.json')
+    console.log('appid', appid, projectConfigJson.appid)
     if (projectConfigJson.appid !== appid) throw new Error('appid not match')
 
     // version
@@ -38,4 +38,3 @@ export function readProfile() {
     process.exit(1)
   }
 }
-readProfile()

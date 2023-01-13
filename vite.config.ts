@@ -1,6 +1,5 @@
 import MiniProgramTailwind from '@dcasia/mini-program-tailwind-webpack-plugin/rollup'
 import uni from '@dcloudio/vite-plugin-uni'
-import { visualizer } from 'rollup-plugin-visualizer'
 import autoImport from 'unplugin-auto-import/vite'
 import { defineConfig, loadEnv } from 'vite'
 import WindiCSS from 'vite-plugin-windicss'
@@ -13,9 +12,8 @@ export default defineConfig(({ mode }) => {
   const pImport = autoImport({ imports: ['vue', 'pinia'], dts: 'types/autoImport.d.ts' })
   const pWindi = WindiCSS()
   const pWindiFix = MiniProgramTailwind({ enableRpx: false })
-  const pVisualizer = visualizer()
   return {
-    plugins: [pUni, pImport, pWindi, pWindiFix, buildTime, pVisualizer],
+    plugins: [pUni, pImport, pWindi, pWindiFix, buildTime],
     resolve: {
       alias: { '@': '/src/' },
       extensions: ['.mjs', '.js', '.ts', '.json', '.vue'],
