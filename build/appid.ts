@@ -6,6 +6,7 @@ const JSON_JS = JSON_JS_MAP['manifest.json']
 export const writeAppid: Plugin = {
   name: 'write-appid',
   configResolved(config) {
+    if (config.define['process.env.UNI_PLATFORM'] !== 'mp-weixin') return
     const _appid = config.env.VITE_MP_APPID
     if (!_appid) {
       console.log('环境变量 VITE_MP_APPID 未配置')
