@@ -25,5 +25,6 @@ npx @dcloudio/uvm
 
 # 删除多余uni
 ```
-pnpm remove @dcloudio/uni-mp-alipay @dcloudio/uni-mp-baidu @dcloudio/uni-mp-kuaishou @dcloudio/uni-mp-lark @dcloudio/uni-mp-qq @dcloudio/uni-mp-toutiao @dcloudio/uni-quickapp-webview vue-i18n
+pnpm remove @dcloudio/uni-automator @dcloudio/uni-mp-alipay @dcloudio/uni-mp-baidu @dcloudio/uni-mp-kuaishou @dcloudio/uni-mp-lark @dcloudio/uni-mp-qq @dcloudio/uni-mp-toutiao @dcloudio/uni-quickapp-webview vue-i18n
+
 ```
