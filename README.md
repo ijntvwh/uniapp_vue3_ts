@@ -17,6 +17,11 @@
 npx degit ijntvwh/uniapp_vue3_ts my-project
 
 ```
+#更新 uniapp 版本
+
+```
+npx @dcloudio/uvm
+```
 
 # 删除多余uni
 ```

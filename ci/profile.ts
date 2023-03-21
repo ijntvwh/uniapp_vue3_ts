@@ -33,7 +33,7 @@ export function readProfile() {
     const version = packageJson.version + dayjs().format('.MMDD.HHmm')
 
     return { appid, projectPath, privateKeyPath, version }
-  } catch (err) {
+  } catch (err: any) {
     console.log(err.message)
     process.exit(1)
   }
