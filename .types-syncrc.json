@@ -1,0 +1,4 @@
+{
+  "ignore": ["sass"],
+  "packagesManager": "pnpm"
+}

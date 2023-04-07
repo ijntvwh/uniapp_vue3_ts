@@ -11,4 +11,3 @@ dist
 /types/autoImport.d.ts
 pnpm-lock.yaml
 /stats.html
-/ci/*.key

@@ -1,0 +1,14 @@
+node_modules
+dist
+.vscode
+.husky
+
+stats.html
+README.md
+.idea
+.DS_Store
+.vscode
+Dockerfile
+.git
+.gitignore
+.editorconfig

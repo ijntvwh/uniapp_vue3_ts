@@ -19,5 +19,8 @@ export default defineConfig(({ mode }) => {
       alias: { '@': '/src/' },
       extensions: ['.mjs', '.js', '.ts', '.json', '.vue'],
     },
+    esbuild: {
+      drop: mode === 'production' ? ['console', 'debugger'] : [],
+    },
   }
 })
