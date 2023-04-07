@@ -10,7 +10,8 @@ export const writeAppid: Plugin = {
     const _appid = config.env.VITE_MP_APPID
     if (!_appid) {
       console.log('环境变量 VITE_MP_APPID 未配置')
-      process.exit(1)
+      // process.exit(1)
+      return
     }
     const p = config.plugins.find(p => p.name === 'uni:mp-manifest-json')
     if (!p) return

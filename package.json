@@ -7,7 +7,8 @@
     "build": "uni build -p mp-weixin",
     "prepare": "types-sync && husky install",
     "preinstall": "npx only-allow pnpm",
-    "preview": "bash build/preview.sh"
+    "preview": "bash build/preview.sh",
+    "docker": "docker build -t uni-mp . && docker run -v $(pwd)/dist:/app/dist --rm uni-mp"
   },
   "lint-staged": {
     "*.{ts,js,vue,json}": "eslint"
@@ -73,7 +74,7 @@
     "windicss": "^3.5.6"
   },
   "engines": {
-    "node": ">=16",
+    "node": ">=18",
     "pnpm": ">=7"
   }
 }
