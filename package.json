@@ -7,9 +7,7 @@
     "build": "uni build -p mp-weixin",
     "prepare": "types-sync && husky install",
     "preinstall": "npx only-allow pnpm",
-    "preview": "bash build/preview.sh",
-    "upload": "npx tsx --tsconfig tsconfig.node.json ci/upload.ts",
-    "preview2": "npx tsx --tsconfig tsconfig.node.json ci/preview.ts"
+    "preview": "bash build/preview.sh"
   },
   "lint-staged": {
     "*.{ts,js,vue,json}": "eslint"
@@ -67,7 +65,6 @@
     "miniprogram-ci": "^1.9.5",
     "prettier": "^2.8.5",
     "rollup-plugin-visualizer": "^5.9.0",
-    "tsx": "^3.12.2",
     "types-sync": "3.6.0",
     "typescript": "^5.0.2",
     "unplugin-auto-import": "^0.11.5",
