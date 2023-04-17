@@ -5,7 +5,7 @@ WORKDIR /app
 ENV TZ="Asia/Shanghai"
 
 ADD package.json .npmrc pnpm-lock.yaml .types-syncrc.json /app/
-RUN pnpm install
+RUN pnpm i
 
 ADD . .
 CMD pnpm build
