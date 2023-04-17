@@ -141,6 +141,9 @@ devDependencies:
   vite:
     specifier: 4.1.4
     version: 4.1.4(@types/node@18.15.11)(sass@1.62.0)(terser@5.16.9)
+  vite-plugin-inspect:
+    specifier: ^0.7.22
+    version: 0.7.22(vite@4.1.4)
 
 packages:
 
@@ -6679,6 +6682,24 @@ packages:
   /vary@1.1.2:
     resolution: {integrity: sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==}
     engines: {node: '>= 0.8'}
+    dev: true
+
+  /vite-plugin-inspect@0.7.22(vite@4.1.4):
+    resolution: {integrity: sha512-Z4y3MPuvn//0/XcpNLwTBqjfSt+c2utIFZu8Dw+nbR2HrPoIrKHedvSuqC8mLzxOpRKRoW60HWvZUDz8J2zRIA==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      vite: ^3.1.0 || ^4.0.0
+    dependencies:
+      '@antfu/utils': 0.7.2
+      '@rollup/pluginutils': 5.0.2
+      debug: 4.3.4
+      fs-extra: 11.1.1
+      picocolors: 1.0.0
+      sirv: 2.0.2
+      vite: 4.1.4(@types/node@18.15.11)(sass@1.62.0)(terser@5.16.9)
+    transitivePeerDependencies:
+      - rollup
+      - supports-color
     dev: true
 
   /vite@4.1.4(@types/node@18.15.11)(sass@1.62.0)(terser@5.16.9):

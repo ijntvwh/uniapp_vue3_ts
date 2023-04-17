@@ -5,9 +5,10 @@
     "dev:h5": "uni",
     "dev": "uni -p mp-weixin",
     "build": "uni build -p mp-weixin",
-    "prepare": "types-sync && husky install",
+    "prepare": "husky install",
     "preinstall": "npx only-allow pnpm",
     "preview": "bash build/preview.sh",
+    "postinstall": "types-sync",
     "docker": "docker build -t uni-mp . && docker run -v $(pwd)/dist:/app/dist --rm uni-mp"
   },
   "lint-staged": {
@@ -61,7 +62,8 @@
     "unocss": "^0.51.4",
     "unocss-preset-weapp": "^0.5.3",
     "unplugin-auto-import": "^0.11.5",
-    "vite": "4.1.4"
+    "vite": "4.1.4",
+    "vite-plugin-inspect": "^0.7.22"
   },
   "engines": {
     "node": ">=18",
