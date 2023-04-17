@@ -1,4 +1,11 @@
 {
-  "ignore": ["sass"],
+  "ignore": [
+    "sass",
+    "eslint",
+    "eslint-config-prettier",
+    "eslint-plugin-prettier",
+    "prettier",
+    "rollup-plugin-visualizer"
+  ],
   "packagesManager": "pnpm"
 }

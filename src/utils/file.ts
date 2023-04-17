@@ -1,8 +1,6 @@
 import dayjs from 'dayjs'
-import path from 'path-browserify'
 import parseURL from 'url-parse'
 
-const { dirname, join } = path
 const fsm = wx.getFileSystemManager()
 const WX_FILE_PREFIX = wx.env.USER_DATA_PATH
 const URL_PREFIX = 'url'
@@ -26,7 +24,7 @@ export function toWxPath(p: string): WxPath {
 }
 
 function checkWxDir(filePath: WxPath): Promise<void> {
-  const dirPath = dirname(filePath)
+  const dirPath = filePath.substring(0, filePath.lastIndexOf('/'))
   return new Promise<void>((resolve, reject) =>
     fsm.stat({
       path: dirPath,
@@ -79,8 +77,8 @@ function cleanCacheFiles(prefix = URL_PREFIX, count = URL_MAX) {
 }
 
 function urlToPath(s: string, prefix: string) {
-  const url = parseURL(s, false)
-  return join(prefix, url.hostname.replaceAll('.', '_'), url.pathname)
+  const { hostname, pathname } = parseURL(s, false)
+  return [prefix, hostname.replaceAll('.', '_'), pathname.substring(1)].join('/')
 }
 
 export const loadUrl = (url: string, prefix = URL_PREFIX) => {
