@@ -1,12 +1,12 @@
 {
   "recommendations": [
     "vue.volar",
+    "antfu.unocss",
     "esbenp.prettier-vscode",
     "dbaeumer.vscode-eslint",
     "mikestead.dotenv",
     "mhutchie.git-graph",
     // "vue.vscode-typescript-vue-plugin", recommend take over mode
-    "voorjaar.windicss-intellisense",
     "sdras.vue-vscode-snippets",
     "stylelint.vscode-stylelint",
     "uni-helper.uni-app-snippets-vscode",

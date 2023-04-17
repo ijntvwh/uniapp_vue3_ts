@@ -6,7 +6,8 @@
 |包管理器|pnpm|
 |网络请求|uni-ajax|
 |路由拦截|uni-crazy-router|
-|css样式|windicss, vite-plugin-windicss, @dcasia/mini-program-tailwind-webpack-plugin|
+|css 样式|unocss, unocss-preset-weapp|
+
 |代码校验|husky, lint-staged, eslint, prettier|
 |状态管理|pinia, pinia-plugin-persist-uni|
 |类型导入|types-sync, unplugin-auto-import|

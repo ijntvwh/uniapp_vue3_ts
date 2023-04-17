@@ -59,9 +59,7 @@
     "vant",
     "vite",
     "weapp",
-    "wechat",
-    "windi",
-    "windicss"
+    "wechat"
   ],
   "todo-tree.general.tags": ["BUG", "HACK", "FIXME", "TODO", "XXX", "[ ]", "[x]", "todo"],
   "todo-tree.filtering.excludeGlobs": ["**/node_modules/**", "/workers/**"],
