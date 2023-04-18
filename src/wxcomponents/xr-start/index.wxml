@@ -1,0 +1,1 @@
+<basic-scene disable-scroll width="{{renderWidth}}" height="{{renderHeight}}" style="width:{{width}}px;height:{{height}}px;" />

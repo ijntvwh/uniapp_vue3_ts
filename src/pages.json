@@ -10,10 +10,19 @@
       "path": "pages/user"
     }
   ],
+  "subpackages": [
+    {
+      "root": "xr",
+      "pages": [{ "path": "pages/basic" }]
+    }
+  ],
   "globalStyle": {
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "uni-app",
     "navigationBarBackgroundColor": "#F8F8F8",
-    "backgroundColor": "#F8F8F8"
+    "backgroundColor": "#F8F8F8",
+    "usingComponents": {
+      "xr-start": "/wxcomponents/xr-start/index"
+    }
   }
 }

@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "basic-scene": "../basic-scene/index"
+  }
+}

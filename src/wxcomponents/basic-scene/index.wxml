@@ -1,0 +1,6 @@
+<xr-scene>
+  <xr-light type="ambient" color="1 1 1" intensity="1" />
+  <xr-asset-material asset-id="simple" effect="simple" uniforms="u_baseColorFactor:0.8 0.4 0.4 1" />
+  <xr-mesh node-id="cube" geometry="cube" material="simple" />
+  <xr-camera clear-color="0.4 0.8 0.6 1" position="0 1 4" target="cube" camera-orbit-control />
+</xr-scene>

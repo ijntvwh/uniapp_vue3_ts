@@ -15,7 +15,8 @@
       "enhance": true,
       "urlCheck": false
     },
-    "usingComponents": true
+    "usingComponents": true,
+    "lazyCodeLoading": "requiredComponents"
   },
   "uniStatistics": {
     "enable": false

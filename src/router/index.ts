@@ -15,7 +15,7 @@ export const navTo = (to: string | CommonOptions, type: NavKey = 'to'): Promise<
   const func = NavFuncMap[type]
   if (typeof to === 'string') {
     // 自动添加 /pages/ 的前缀
-    const url = /^\/?pages\//.test(to) ? to : `/pages/${to}`
+    const url = to.startsWith('/') ? to : `/pages/${to}`
     // @ts-ignore
     return func({ url })
   }

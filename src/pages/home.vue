@@ -3,6 +3,7 @@
     <button @click="navUser">跳转到用户页</button>
     <button @click="testApi()">{{ fetcher ? '取消' : '网络请求' }}</button>
     <button @click="testApi(true)">网络请求Full</button>
+    <button @click="navTo('/xr/pages/basic')">xr-frame</button>
     <view>{{ res }}</view>
   </view>
 </template>
