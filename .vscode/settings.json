@@ -73,8 +73,8 @@
     "/dist/": true,
     "/src/lib/": true,
     "/src/static/": true,
-    "/src/uni_modules": true,
-    "/src/wxcomponents/": true
+    "/src/uni_modules": true
+    // "/src/wxcomponents/": true
   },
   "files.associations": {
     "*.cjson": "jsonc",
