@@ -13,12 +13,7 @@ module.exports = {
     node: true,
     es6: true,
   },
-  extends: [
-    'plugin:vue/vue3-recommended',
-    'plugin:vue/vue3-strongly-recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:prettier/recommended',
-  ],
+  extends: ['plugin:vue/vue3-recommended', 'plugin:@typescript-eslint/recommended', 'plugin:prettier/recommended'],
   globals: {
     uni: true,
     UniApp: true,

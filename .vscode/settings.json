@@ -10,6 +10,7 @@
   },
   "stylelint.validate": ["css", "scss", "vue"],
   "editor.formatOnSaveMode": "modificationsIfAvailable",
+  "prettier.prettierPath": "./node_modules/prettier/index.cjs",
   "[vue]": {
     "editor.formatOnSave": false,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -44,23 +45,12 @@
   "eslint.run": "onSave",
   "eslint.format.enable": true,
   "eslint.lintTask.enable": true,
-  "eslint.packageManager": "pnpm",
   "npm.packageManager": "pnpm",
   "search.exclude": {
     "**/dist": true,
     "**/node_modules": true
   },
-  "cSpell.words": [
-    "extralight",
-    "miniprogram",
-    "nprogress",
-    "pinia",
-    "qrcode",
-    "vant",
-    "vite",
-    "weapp",
-    "wechat"
-  ],
+  "cSpell.words": ["extralight", "miniprogram", "nprogress", "pinia", "qrcode", "vant", "vite", "weapp", "wechat"],
   "todo-tree.general.tags": ["BUG", "HACK", "FIXME", "TODO", "XXX", "[ ]", "[x]", "todo"],
   "todo-tree.filtering.excludeGlobs": ["**/node_modules/**", "/workers/**"],
   "todo-tree.highlights.customHighlight": {
