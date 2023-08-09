@@ -5,7 +5,8 @@
     "eslint-config-prettier",
     "eslint-plugin-prettier",
     "prettier",
-    "rollup-plugin-visualizer"
+    "rollup-plugin-visualizer",
+    "lint-staged"
   ],
   "packagesManager": "pnpm"
 }
