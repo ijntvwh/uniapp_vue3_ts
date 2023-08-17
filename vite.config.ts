@@ -17,7 +17,7 @@ export default defineConfig(({ mode }) => {
   const pVisualizer = visualizer()
   const pInspect = Inspect({ build: env.VITE_USER_NODE_ENV === 'production', outputDir: 'dist/.vite-inspect' })
   return {
-    plugins: [pUni, pImport, pUno, buildTime, mpHooks, pVisualizer, pInspect],
+    plugins: [mpHooks, pUni, pImport, pUno, buildTime, pVisualizer, pInspect],
     resolve: {
       alias: { '@': '/src/' },
       extensions: ['.mjs', '.js', '.ts', '.json', '.vue'],
