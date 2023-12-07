@@ -8,6 +8,12 @@
     },
     {
       "path": "pages/user"
+    },
+    {
+      "path": "pages/web",
+      "style": {
+        "pageOrientation": "landscape"
+      }
     }
   ],
   "globalStyle": {
