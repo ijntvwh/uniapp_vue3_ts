@@ -11,13 +11,19 @@ import { buildTime } from './build/time'
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd())
   console.log('env', mode, env)
-  const pUni = uni()
   const pImport = autoImport({ imports: ['vue', 'pinia'], dts: 'types/autoImport.d.ts' })
-  const pUno = unocss()
-  const pVisualizer = visualizer()
   const pInspect = Inspect({ build: env.VITE_USER_NODE_ENV === 'production', outputDir: 'dist/.vite-inspect' })
   return {
-    plugins: [mpHooks, pUni, pImport, pUno, buildTime, pVisualizer, pInspect],
+    plugins: [
+      // 根据环境变量注入appid, 根据package.json的name和version写入project.config.json
+      mpHooks(),
+      uni(),
+      unocss(),
+      visualizer(),
+      pImport,
+      buildTime,
+      pInspect,
+    ],
     resolve: {
       alias: { '@': '/src/' },
       extensions: ['.mjs', '.js', '.ts', '.json', '.vue'],

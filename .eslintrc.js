@@ -23,5 +23,6 @@ module.exports = {
     'vue/multi-word-component-names': 1,
     'no-unused-vars': [1, { args: 'after-used', argsIgnorePattern: '^_' }],
     '@typescript-eslint/ban-ts-comment': 1,
+    '@typescript-eslint/no-explicit-any': 1,
   },
 }

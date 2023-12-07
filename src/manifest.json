@@ -7,11 +7,12 @@
   "transformPx": false,
   "mp-weixin": {
     "appid": "",
+    "libVersion": "latest",
     "setting": {
       "ignoreDevUnusedFiles": false,
       "ignoreUploadUnusedFiles": false,
       "compileHotReLoad": false,
-      "es6": true,
+      "es6": false,
       "enhance": true,
       "urlCheck": false
     },
