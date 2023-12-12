@@ -5,7 +5,7 @@ import { transformerClass } from 'unocss-preset-weapp/transformer'
 export default {
   presets: [
     // https://github.com/MellowCo/unocss-preset-weapp
-    presetWeapp({ whRpx: false }),
+    presetWeapp(),
   ],
   shortcuts: [
     {
