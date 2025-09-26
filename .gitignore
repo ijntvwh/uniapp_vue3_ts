@@ -1,0 +1,25 @@
+node_modules
+.DS_Store
+dist
+*.local
+generated
+
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+.idea
+.stylelintcache
+.eslintcache
+
+.vite-inspect
+/types/auto-import.d.ts
+/types/uni-pages.d.ts
+src/manifest.json
+src/pages.json
+
+pnpm-lock.yaml
+/stats.html
+
+# TIPS：如果某些文件已经加入了版本管理，现在重新加入 .gitignore 是不生效的，需要执行下面的操作
+# `git rm -r --cached .` 然后提交 commit 即可。

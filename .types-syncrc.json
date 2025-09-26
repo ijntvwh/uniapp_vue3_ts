@@ -1,0 +1,4 @@
+{
+  "ignore": ["core-js", "eslint", "lint-staged", "prettier", "rollup-plugin-visualizer", "sass"],
+  "packagesManager": "pnpm"
+}
