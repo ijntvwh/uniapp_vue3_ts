@@ -16,8 +16,11 @@ export default defineManifestConfig({
   'mp-weixin': {
     appid: 'wx70b99e62f7a3a62c',
     setting: {
+      condition: false,
       es6: false,
+      enhance: false,
       es7: false,
+      minified: false,
       urlCheck: false,
     },
     styleIsolation: 'shared',
