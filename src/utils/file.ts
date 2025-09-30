@@ -1,4 +1,3 @@
-import dayjs from 'dayjs'
 import parseURL from 'url-parse'
 
 const fsm = wx.getFileSystemManager()
@@ -51,7 +50,7 @@ let last = 0
 const CLEAN_CACHE_INTERVAL = 10
 const URL_MAX = 20
 function cleanCacheFiles(prefix = URL_PREFIX, count = URL_MAX) {
-  const now = dayjs().unix()
+  const now = Math.floor(Date.now() / 1000)
   if (last && now - last < CLEAN_CACHE_INTERVAL) return Promise.resolve()
   last = now
   const path = toWxPath(prefix)

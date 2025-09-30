@@ -19,6 +19,7 @@ export const useEventStore = defineStore('event', {
       setTimeout(() => showToast(title), 100)
     },
     async navLogin(res: AjaxResponse<BaseResult>) {
+      // TODO: 认证失败判断
       if (res.data?.code === 401) {
         useAppStore().updateToken()
         if (!hasCustomKey(res, 'anon')) navTo('login')

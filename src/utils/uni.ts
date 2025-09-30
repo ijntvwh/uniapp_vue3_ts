@@ -27,12 +27,4 @@ export async function requestPerm(perm: PermScope, modalContent: string) {
     })
 }
 
-export async function wxLoginCode() {
-  return uni.login().then(res => res.code)
-  // return new Promise<string>((resolve, reject) =>
-  //   wx.login({
-  //     success: (res: WechatMiniprogram.LoginSuccessCallbackResult) => resolve(res.code),
-  //     fail: reject,
-  //   }),
-  // )
-}
+export const wxLoginCode = () => uni.login().then(res => res.code)

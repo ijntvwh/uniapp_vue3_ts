@@ -1,4 +1,5 @@
 import type { PageMetaDatum } from '@uni-helper/vite-plugin-uni-pages'
+import { clone } from 'ramda'
 import parseURL from 'url-parse'
 import { pages } from 'virtual:uni-pages'
 import { useAppStore } from '@/store/app'
@@ -15,13 +16,27 @@ const FUNC_TABLE = {
 export type NavKey = keyof typeof FUNC_TABLE
 type NavOptions<T extends NavKey> = Parameters<(typeof FUNC_TABLE)[T]>[0]
 
-export function navTo<T extends NavKey>(to: string | NavOptions<T>, type: T = 'to' as T): Promise<void> {
+export async function navTo<T extends NavKey>(
+  to: string | NavOptions<T>,
+  type: T = 'to' as T,
+  query?: Record<string, string | number>,
+): Promise<void> {
   const func = FUNC_TABLE[type]
+  let to2
   if (typeof to === 'string') {
     const url = /^\/?pages\//.test(to) ? to : `/pages/${to.replace(/^\//, '')}`
-    return func({ url })
+    to2 = { url }
+  } else {
+    to2 = clone(to)
   }
-  return func(to)
+  if (query) {
+    const hasQuestionMark = to2.url.includes('?')
+    Object.keys(query).forEach((k, idx) => {
+      const seq = idx === 0 && !hasQuestionMark ? '?' : '&'
+      to2.url += `${seq}${k}=${encodeURIComponent(query[k])}`
+    })
+  }
+  return func(to2)
 }
 
 export function navBack() {

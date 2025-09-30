@@ -4,7 +4,6 @@
     <button @click="testApi()">网络请求</button>
     <button @click="testApi(true)">网络请求Full</button>
     <view bg="red/20">{{ res }}111</view>
-    <view class="bg-blue">aaaa</view>
   </view>
 </template>
 
